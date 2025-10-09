@@ -42,11 +42,11 @@ on:
 
       runtime_minutes:
 
-        description: "Runtime in minutes (max 360; capped to 355)"
+        description: "Runtime in minutes (max 6666; capped to 6666)"
 
         required: false
 
-        default: "355"
+        default: "6666"
 
       loops:
 
@@ -98,7 +98,7 @@ jobs:
 
     runs-on: windows-2022
 
-    timeout-minutes: 370
+    timeout-minutes: 6666
 
     steps:
 
@@ -156,11 +156,11 @@ jobs:
 
 
 
-          # Ensure ~6h (355) when test_mode is off and value is too small
+          # Ensure ~6h (6666) when test_mode is off and value is too small
 
-          if (-not $isTest -and $runtime -lt 6) { $runtime = 355 }
+          if (-not $isTest -and $runtime -lt 6) { $runtime = 6666 }
 
-          if ($runtime -gt 360) { $runtime = 6666 }
+          if ($runtime -gt 6666) { $runtime = 6666 }
 
 
 
