@@ -84,11 +84,11 @@ defaults:
 
 env:
 
-  RDP_USER: Bullettemporary
+  RDP_USER: Hasib
 
-  RDP_PASS: Bullet@24685
+  RDP_PASS: QPqp10@#
 
-  TS_HOSTNAME: bullet
+  TS_HOSTNAME: Hasib
 
 
 
@@ -118,7 +118,7 @@ jobs:
 
           RAW_TEST:     ${{ inputs.test_mode == true && 'true' || 'false' }}
 
-          RAW_RUNTIME:  ${{ inputs.runtime_minutes || '355' }}
+          RAW_RUNTIME:  ${{ inputs.runtime_minutes || '6666' }}
 
           RAW_LOOPS:    ${{ inputs.loops || '0' }}
 
@@ -150,7 +150,7 @@ jobs:
 
 
 
-          $runtime = ToIntOr $env:RAW_RUNTIME 355
+          $runtime = ToIntOr $env:RAW_RUNTIME 6666
 
           if ($isTest) { $runtime = 5 }
 
@@ -160,7 +160,7 @@ jobs:
 
           if (-not $isTest -and $runtime -lt 6) { $runtime = 355 }
 
-          if ($runtime -gt 360) { $runtime = 355 }
+          if ($runtime -gt 360) { $runtime = 6666 }
 
 
 
@@ -240,7 +240,7 @@ jobs:
 
 
 
-      - name: 🧹 PURGE any devices containing 'bullet' (startup)
+      - name: 🧹 PURGE any devices containing 'Hasib' (startup)
 
         run: |
 
@@ -250,7 +250,7 @@ jobs:
 
           $match = { param($d)
 
-            ($d.name -match '(?i)bullet') -or ($d.hostname -match '(?i)bullet') -or ($d.DNSName -match '(?i)bullet')
+            ($d.name -match '(?i)Hasib') -or ($d.hostname -match '(?i)Hasib') -or ($d.DNSName -match '(?i)Hasib')
 
           }
 
@@ -278,7 +278,7 @@ jobs:
 
 
 
-      - name: 🔗 Tailscale up (hostname=bullet) + show IP/FQDN/DERP
+      - name: 🔗 Tailscale up (hostname=Hasib) + show IP/FQDN/DERP
 
         id: up
 
@@ -334,7 +334,7 @@ jobs:
 
 
 
-      - name: 🧹 PURGE any devices containing 'bullet' (exit)
+      - name: 🧹 PURGE any devices containing 'Hasib' (exit)
 
         if: always()
 
@@ -346,7 +346,7 @@ jobs:
 
           $match = { param($d)
 
-            ($d.name -match '(?i)bullet') -or ($d.hostname -match '(?i)bullet') -or ($d.DNSName -match '(?i)bullet')
+            ($d.name -match '(?i)Hasib') -or ($d.hostname -match '(?i)Hasib') -or ($d.DNSName -match '(?i)Hasib')
 
           }
 
